@@ -1,0 +1,16 @@
+Php
+
+mvc 패턴 :
+https://mingeun2154.github.io/wooteco/why-we-use-mvc-pattern/
+
+PSR php :
+https://psr.kkame.net/deprecated/psr-2-coding-style-guide
+
+autoload, 
+
+orm framework : (sql없이 데이터를 넣을수있음),
+
+mvc framework,
+composer
+
+blade
