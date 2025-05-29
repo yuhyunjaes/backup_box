@@ -1,0 +1,362 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+html {
+    position: relative;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+label,
+button {
+    cursor: pointer;
+}
+input {
+    cursor: pointer;
+}
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.side_menu {
+    width: 18%;
+    height: 100%;
+    background-color: #f6f6f6;
+}
+.chat_container {
+    width: 82%;
+    height: 100%;
+    background-color: white;
+}
+.chat_con {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chat_body {
+    width: 100%;
+    height: 100%;
+}
+.chat_body_box {
+    width: 63.415%;
+}
+.chating_box {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.user_message1 {
+    position: absolute;
+    right: 0;
+}
+.user_message2 {
+    position: absolute;
+    left: 0;
+}
+.chat_body_box > div:nth-child(1) {
+    padding-top: 100px;
+}
+.chat_body_box > div:last-child {
+    padding-bottom: 200px;
+}
+.chat_text_box {
+    position: fixed;
+    width: calc((100vw - 18%) - 30%);
+    margin: 0 15% 0 15%;
+    height: 12%;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 1px 10px rgb(181, 181, 181);
+    bottom: 5%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+input:focus {
+    outline: none;
+    border: none; 
+    box-shadow: none; 
+}
+.chat_text_box input[type='text'] {
+    width: 90%;
+    height: 50%;
+    border: none;
+    font-size: 16px;
+}
+#sin:checked ~ .sin,
+#sup:checked ~ .sup {
+    display: block;
+}
+.chat_text_control_box {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.chat_text_box > form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.chat_text_control_box input[type='submit'] {
+    width: 35px;
+    height: 35px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    font-weight: 900;
+    font-size: 18px;
+}
+input[type='radio'],
+input[type='checkbox'] {
+    display: none;
+}
+.sin,
+.sup {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+.bt {
+    margin: 0 10px 0 10px;
+}
+#add {
+    display: none;
+}
+.che {
+    background: #EFEFEF;
+    text-align: center;
+    line-height: 20px;
+    width: 80px;
+    border: 1px solid gray;
+    font-size: 15px;
+    border-radius: 2px;
+}
+.add_a {
+    text-decoration: none;
+    background: #EFEFEF;
+    border: 1px solid gray;
+    border-radius: 2px;
+    color: black;
+}
+.log_btn {
+    display: flex;
+    width: 240px;
+    margin: 0;
+}
+.chat_box {
+    display: none;
+    width: 100%;
+}
+.item {
+    width: calc(100% - 20px);
+    margin: 0 10px 0 10px;
+    height: 40px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    color: black;
+}
+.item_a {
+    position: absolute;
+    right: 10px;
+}
+.item > p {
+    position: absolute;
+    left: 10px;
+}
+.chat {
+    background: #EFEFEF;
+    text-align: center;
+    line-height: 20px;
+    width: 50px;
+    border: 1px solid gray;
+    font-size: 15px;
+    border-radius: 2px;
+    margin: 0 10px 0 10px;
+}
+
+.no_friend_text_message_box {
+    width: calc((100% - 18%) - 1px);
+    border-bottom: 1px solid #EFEFEF;
+    height: 50px;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.no_friend_text_box {
+    width: 50%;
+    height: 100%;
+    color: gray;
+    text-align: center;
+    line-height: 50px;
+    font-size: 12px;
+}
+.no_friend_text_box h1 {
+    font-size: 20px;
+}
+.no_friend_text_box a {
+    line-height: 50px;
+    font-size: 12px;
+}
+.side_menu_header,
+.side_menu_footer {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.side_menu_body {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.friend_box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+.addy_box,
+.chat_box {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f6f6;
+}
+.log_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.log_btn label {
+    margin: 0;
+}
+#ia {
+    width: 20px;
+    height: 20px;
+    background-color: #c6c6c6;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 23px;
+    color: white;
+    position: absolute;
+    right: 10px;
+}
+.itemm {
+    width: calc(100% - 20px);
+    margin: 0 10px 0 10px;
+    height: 40px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    color: black;
+}
+.add_idd {
+    position: absolute;
+    left: 10px;
+}
+.new_friend_add_box {
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new_friend_add_container {
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    box-shadow: 0 1px 10px rgb(181, 181, 181);   
+    border-radius: 10px;
+    overflow: hidden;
+}
+.new_friend_add_header {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.new_friend_add_header > span {
+    font-size: 25px;
+    font-weight: 900;
+    position: absolute;
+    left: 10%;
+}
+.new_friend_add_body {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.new_friend_add_body > p {
+    position: absolute;
+    left: 10%;
+}
+.new_friend_add_footer {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.new_friend_add_footer_btn_box {
+    display: flex;
+    position: absolute;
+    right: 10%;
+}
+.new_friend_add_footer_btn_box a {
+    margin: 0 0 0 40px;
+    color: #006aff;
+    font-size: 14px;
+}
