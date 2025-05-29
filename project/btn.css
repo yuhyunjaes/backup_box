@@ -1,0 +1,118 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+input[type=radio] {
+    display: none;
+}
+label {
+    cursor: pointer;
+}
+.bt_box {
+    width: 120px;
+    height: 50px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    background-color: aqua;
+}
+.bt_box::after,
+.bt_box::before {
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bt_box::after {
+    width: 0px;
+    height: 20px;
+    background-color: aqua;
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    left: 20px;
+    z-index: 1;
+}
+.bt_box::before {
+    width: 0px;
+    height: 0px;
+    background-color: navy;
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    right: 20px;
+    z-index: 2;
+}
+
+#che1:checked ~ .bt_box::after {
+    width: 500px;
+    height: 500px;
+    transition: 1.5s;
+    left: -250px;
+}
+#che1:checked ~ .bt_box {
+    background-color: navy;
+}
+
+#che2:checked ~ .bt_box::before {
+    width: 500px;
+    height: 500px;
+    transition: 1.5s;
+    right: -250px;
+}
+
+#che1:checked ~ .bt_box .che1 {
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+}
+#che2:checked ~ .bt_box .che1 {
+    pointer-events: all;
+    width: 20px;
+    height: 20px;
+    transition-delay: 0.5s;
+}
+
+#che2:checked ~ .bt_box .che2 {
+    pointer-events: none;
+    width: 0px;
+    height: 0px;
+}
+#che1:checked ~ .bt_box .che2 {
+    pointer-events: all;
+    width: 20px;
+    height: 20px;
+    transition-delay: 0.5s;
+}
+
+.bt_box label:nth-child(1) {
+    width: 20px;
+    height: 20px;
+    background-color: aqua;
+    border-radius: 50%;
+    position: absolute;
+    left: 15%;
+}
+.bt_box label:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    background-color: navy;
+    border-radius: 50%;
+    position: absolute;
+    right: 15%;
+}
+.bt_box label {
+    z-index: 999;
+    transition: 0.3s;
+}
