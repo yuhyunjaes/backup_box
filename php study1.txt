@@ -1,0 +1,2 @@
+php artisan make:controller 이름_Controller
+컨트롤러 자동 생성 + 자동 세팅
