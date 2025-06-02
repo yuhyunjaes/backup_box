@@ -1,0 +1,95 @@
+!처음! cd로 c드라이브/xampp/htdocs/laravel폴더 진입
+
+컨트롤러 파일 :
+php artisan make:controller 이름Controller
+
+테이블 관리 :
+php artisan make:migration create_000_table : 테이블 생성 및 업데이트 및 수정파일 생성
+php artisan migrate : 생성, 업데이트 한 코드들을 실행시켜 적용
+php artisan migrate:rollback : 가장 마지막에 업데이트 한 코드들을 롤백
+
+데이터 삽입
+데이터 삽입을 위한 모델을 불러온다
+use App\Models\모델이름; (.php)는 없이
+
+protected $fillable = [
+        'user_name',
+        'email',
+        'user_id',
+        'user_password',
+    ];모델에 데이터 형식에 맞게
+
+HTTP요청 자료들을 불러온다
+use Illuminate\Http\Request;
+
+public function 함수 이름(Request $request(매게변수로 받음)) {
+$request안에는 사용자가 form으로 보낸 정보들이 있음
+$request->validate(validate은 입력값이 올바른지 유효성 검사를 해주는 laravel내장 메소드)
+
+(예)
+$request->validate([
+   'user_name' => 'required|string|max:255',
+   'email' => 'required|email|unique:users,email',
+   'user_id' => 'required|string|unique:users,user_id|max:50',
+   'user_password' => 'required|min:6',
+]);
+
+string : 문자열이어야 함, integer : 정수여야 함
+
+numeric : 숫자(정수, 실수 모두 가능)여야 함
+
+boolean : true/false 값이어야 함, array : 배열이어야 함
+
+email : 이메일 형식이어야 함, url : URL 형식이어야 함
+
+date : 날짜 형식이어야 함, file : 업로드된 파일이어야 함
+
+
+required : 반드시 값이 있어야 함
+
+nullable : 값이 없어도 됨 (null 허용)
+
+sometimes : 값이 있을 때만 검증
+
+
+max:value : 최대 길이 또는 크기
+
+min:value : 최소 길이 또는 크기
+
+size:value : 정확히 value 크기여야 함
+}
+
+라라벨 내장 로그인 관련 기능 Auth
+use Illuminate\Support\Facades\Auth;
+
+데이터를 테이블에 삽입
+$user = User::create([
+   'user_name' => $request->user_name,
+   'email' => $request->email,
+   'user_id' => $request->user_id,
+   'user_password' => Hash::make($request->user_password), // 비밀번호 암호화
+]);
+비밀번호 Hash 를 사용하기 위해
+use Illuminate\Support\Facades\Hash;
+
+Auth::login($user)
+특정 사용자 객체로 로그인 처리
+Auth::attempt($credentials)
+사용자 입력한 아이디/비번 같은 인증정보로 로그인 시도
+성공하면 로그인 상태가 됨 (true/false 반환)
+Auth::logout()
+현재 로그인한 사용자 로그아웃 처리
+Auth::check()
+현재 로그인 상태인지(true/false) 확인
+Auth::user()
+현재 로그인한 사용자 정보 객체 
+Auth::id()
+현재 로그인한 사용자 ID 반환
+
+redirect()->route(web.php보낼 값) : 페이지를 이동시켜줌(get)
+
+로그인 : 앞 Auth::attempt(변수)가 쓰임
+변수에 $request(http)값 (예시) $request->only(['아이디', '비밀번호']); 뭐만 쓴다고 저장함
+만약 유저중 아이디 비밀번호가 같다면 if(Auth::attempt(변수))에 해당 된다면 로그인 성공 리턴으로 redirect()->route(web.php보낼 값)을 입력 자동 세션 저장이 되어 로그인이 성공
+
+실패한다면 그냥 if문 아래 리턴 back()으로 이전 페이지로 이동 시켜주고 ->withInput을 사용하여 input 값을 채우고 ->with('키 이름', 메시지)로 세션에 저장이 되고 한번 출력후 없어진다,
