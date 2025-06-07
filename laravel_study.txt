@@ -4,6 +4,8 @@
 php artisan make:controller 이름Controller
 
 테이블 관리 :
+php artisan session:table : 세션 테이블 기본 제공
+
 php artisan make:migration create_000_table : 테이블 생성 및 업데이트 및 수정파일 생성
 php artisan migrate : 생성, 업데이트 한 코드들을 실행시켜 적용,
 php artisan migrate:fresh : 재설치/다시실행
