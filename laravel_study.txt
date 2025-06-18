@@ -1,5 +1,8 @@
 !처음! cd로 c드라이브/xampp/htdocs/laravel폴더 진입
 
+.env파일에 키를 생성
+php artisan key:generate
+
 컨트롤러 파일 :
 php artisan make:controller 이름Controller
 
