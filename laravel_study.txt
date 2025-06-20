@@ -1,5 +1,8 @@
 !처음! cd로 c드라이브/xampp/htdocs/laravel폴더 진입
 
+이미지같은 파일 저장을 할때는 store로 store('만들폴더 이름', '만들 부모폴더의 이름')
+그후 명령어 php artisan storage:link를 치면 웹에서 사용할수 있는 형태
+
 .env파일에 키를 생성
 php artisan key:generate
 
