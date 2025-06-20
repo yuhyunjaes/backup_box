@@ -1,5 +1,13 @@
 !처음! cd로 c드라이브/xampp/htdocs/laravel폴더 진입
 
+파일을 보낼때 html form에 enctype="multipart/form-data"를 적어 파일을 보낼 수 있도록 만듦
+input:file에는 name을 images[]이런식으로 배열로 받을수있도록 하고 multiple를 사용하여 여러 파일을 선택 가능하게 만듦
+
+file contoller :
+if문으로 images의 파일이 존재하는지 hasFile를 사용하여 유효성 검사 hasFile('images')
+그후 foreach문으로 여러 파일들을 하나하나 store를 사용하여 파일을 저장하고 모델과 모델을 미리
+관계도로 연결을 해놓았는데 그걸로 인해 파일 테이블에 데이터가 쉽게 들어감
+
 이미지같은 파일 저장을 할때는 store로 store('만들폴더 이름', '만들 부모폴더의 이름')
 그후 명령어 php artisan storage:link를 치면 웹에서 사용할수 있는 형태
 
