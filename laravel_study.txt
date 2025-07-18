@@ -1,5 +1,7 @@
 !처음! cd로 c드라이브/xampp/htdocs/laravel폴더 진입
 
+!Laravel 표준 시간대 바꾸는법 config에서 app.php안에 timezone을 'timezone' => 'Asia/Seoul',
+
 파일을 보낼때 html form에 enctype="multipart/form-data"를 적어 파일을 보낼 수 있도록 만듦
 input:file에는 name을 images[]이런식으로 배열로 받을수있도록 하고 multiple를 사용하여 여러 파일을 선택 가능하게 만듦
 
