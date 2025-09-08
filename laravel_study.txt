@@ -1,6 +1,5 @@
 !처음! cd로 c드라이브/xampp/htdocs/laravel폴더 진입
 
-
 !Laravel 표준 시간대 바꾸는법 
 config에서 app.php안에 timezone을 'timezone' => 'Asia/Seoul',
 
@@ -128,6 +127,7 @@ $request->only(['아이디', '비밀번호']); 뭐만 쓴다고 저장함
 만약 유저중 아이디 비밀번호가 같다면 if(Auth::attempt(변수))에 해당 된다면 로그인 성공 리턴으로 redirect()->route(web.php보낼 값)을 입력 자동 세션 저장이 되어 로그인이 성공
 
 실패한다면 그냥 if문 아래 리턴 back()으로 이전 페이지로 이동 시켜주고 ->withInput을 사용하여 input 값을 채우고 ->with('키 이름', 메시지)로 세션에 저장이 되고 한번 출력후 없어진다,
+
 
 
 
