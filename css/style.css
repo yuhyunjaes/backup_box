@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+:root {
+    --y: 70px;
+    --max: 387;
+}
+
+li {
+    list-style: none;
+    a {
+        text-decoration: none;
+    }
+}
+
+body {
+    height: 100vh;
+}
+
+.number-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.number-item {
+    height: 200px;
+}
+
+.count-container {
+    width: 70px;
+    height: 70px;
+    transform: translateY(-70px);
+}
+
+.count-container li {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    font-weight: bold;
+}
