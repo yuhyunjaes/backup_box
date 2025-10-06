@@ -3,7 +3,6 @@
 RewriteBase /폴더이름/
 추가하여야 함 그래야 찾음
 
-
 !처음! cd로 c드라이브/xampp/htdocs/laravel폴더 진입
 
 !Laravel 표준 시간대 바꾸는법 
